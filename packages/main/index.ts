@@ -1,4 +1,9 @@
-import { app, BrowserWindow, shell } from 'electron'
+/*
+ * @Author: Cary
+ * @Date: 2022-04-18 10:58:43
+ * @FilePath: \alien-docse:\cary\node-project\electron-vite-vue3\packages\main\index.ts
+ */
+import { app, BrowserWindow, shell, ipcMain, ipcRenderer } from 'electron'
 import { release } from 'os'
 import { join } from 'path'
 
@@ -19,6 +24,8 @@ let win: BrowserWindow | null = null
 async function createWindow() {
   win = new BrowserWindow({
     title: 'Main window',
+    width: 1000,
+    height: 600,
     webPreferences: {
       preload: join(__dirname, '../preload/index.cjs'),
       nodeIntegration: true,
@@ -49,6 +56,10 @@ async function createWindow() {
 }
 
 app.whenReady().then(createWindow)
+
+ipcMain.on('main-message', () => {
+  console.log('ssssssssssssssssss')
+})
 
 app.on('window-all-closed', () => {
   win = null

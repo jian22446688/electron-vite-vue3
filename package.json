@@ -21,6 +21,7 @@
     "electron": "18.0.2",
     "electron-builder": "^22.14.5",
     "nano-staged": "^0.6.0",
+    "sass": "^1.50.0",
     "simple-git-hooks": "^2.7.0",
     "typescript": "^4.6.3",
     "vite": "^2.9.1",
@@ -39,5 +40,14 @@
     "vite",
     "vue3",
     "vue"
-  ]
+  ],
+  "dependencies": {
+    "@vueuse/core": "^8.2.6",
+    "axios": "^0.26.1",
+    "element-plus": "^2.1.9",
+    "pinia": "^2.0.13",
+    "qs": "^6.10.3",
+    "vue-router": "^4.0.14",
+    "vuex": "^4.0.2"
+  }
 }
